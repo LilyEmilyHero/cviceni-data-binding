@@ -4,13 +4,19 @@ import { useState } from 'react';
 
 export const Ukol2 = () => {
   const [login, setLogin] = useState('petr');
-
+  console.log('login2 ' + login);
   return (
     <>
       <h1>Úkol 2</h1>
       <label>
-        Login:
-        <input type="text" />
+        Login:{' '}
+        <input
+          value={login}
+          onChange={(e) => {
+            setLogin(e.target.value.toUpperCase());
+          }}
+          type="text"
+        />
       </label>
     </>
   );

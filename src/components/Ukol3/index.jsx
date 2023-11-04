@@ -6,15 +6,19 @@ import { useState } from 'react';
 
 export const Ukol3 = () => {
   const [login, setLogin] = useState('petr');
-
+  console.log('login3 ' + login);
   return (
     <>
       <h1>Úkol 3</h1>
       <label>
-        Login:
-        <input type="text" />
+        Login:{' '}
+        <input
+          value={login}
+          onChange={(e) => setLogin(e.target.value)}
+          type="text"
+        />
       </label>
-      <button>Vymazat</button>
+      <button onClick={() => setLogin('')}>Vymazat</button>
     </>
   );
 };
